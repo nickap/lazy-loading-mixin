@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="./vue-components/img-component.js"></script>
+    <title>Lazy Loading Mixin</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Lazy Loading Mixin</h1>
+        <img-component v-for="n in 5" :key="n"></img-component>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+<footer>
+    <style>
+        #app {
+            font-family: "Avenir", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 60px;
+        }
+
+        .unsplash-img {
+            display: block;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</footer>
+
+</html>
