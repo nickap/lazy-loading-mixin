@@ -24,6 +24,12 @@ var lazyLoading = {
                     observer.observe(image);
 
                 });
+            } else {
+                /* Load everything if 'IntersectionObserver' in Window == false */
+                console.log("IntersectionObserver NOT found in Window.");
+                document.querySelectorAll(this.intersectionObserver.target).forEach(image => {
+                    image.src = image.dataset.src;
+                });
             }
         }
     },
