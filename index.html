@@ -7,18 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
     <script src="./vue-components/img-component.js"></script>
+    <script src="./vue-mixins/lazy-loading.js"></script>
     <title>Lazy Loading Mixin</title>
 </head>
 
 <body>
     <div id="app">
         <h1>Lazy Loading Mixin</h1>
-        <img-component v-for="n in 5" :key="n"></img-component>
+        <img-component v-for="n in 10" :key="n"></img-component>
     </div>
 
     <script>
         var app = new Vue({
-            el: '#app'
+            el: '#app',
+            mixins: [lazyLoading],
+            mounted: function () {
+                this.setUpObserver();
+            }
         })
     </script>
 </body>
